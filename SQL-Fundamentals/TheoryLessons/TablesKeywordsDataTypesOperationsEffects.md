@@ -365,3 +365,88 @@ DROP SCHEMA hr CASCADE;
 | search_path        | ❌                | ✔ Needed         |
 
 ---
+
+# ➖ **13. Dropping / Deleting a Column (MySQL & PostgreSQL)**
+
+---
+
+## ✅ **MySQL — Delete a Column**
+
+```sql
+ALTER TABLE company.employees
+DROP COLUMN department;
+```
+
+---
+
+## 🐘 **PostgreSQL — Delete a Column**
+
+```sql
+ALTER TABLE hr.employees
+DROP COLUMN department;
+```
+
+---
+
+# ➖ **14. Dropping Multiple Columns**
+
+---
+
+## MySQL
+
+```sql
+ALTER TABLE company.employees
+DROP COLUMN department,
+DROP COLUMN hire_date;
+```
+
+---
+
+## PostgreSQL
+
+```sql
+ALTER TABLE hr.employees
+DROP COLUMN department,
+DROP COLUMN hire_date;
+```
+
+---
+
+# 🛡️ **15. Safe Drop Column (IF EXISTS)**
+
+---
+
+## MySQL (Supported)
+
+```sql
+ALTER TABLE company.employees
+DROP COLUMN IF EXISTS department;
+```
+
+---
+
+## PostgreSQL (Supported)
+
+```sql
+ALTER TABLE hr.employees
+DROP COLUMN IF EXISTS department;
+```
+
+---
+
+# 📐 **16. ER Diagram (ASCII Text-Based)**
+
+```
++--------------------------+
+|        employees         |
++--------------------------+
+| id           (PK)        |
+| name                      |
+| position                  |
+| department                |
+| hire_date                 |
+| salary                    |
++--------------------------+
+```
+
+---
