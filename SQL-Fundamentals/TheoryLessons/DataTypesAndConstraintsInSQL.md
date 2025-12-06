@@ -7,21 +7,6 @@
 
 ---
 
-# 📌 **Table of Contents**
-
-1. [Introduction](#introduction)
-2. [What Are SQL Data Types?](#what-are-sql-data-types)
-3. [What Are SQL Constraints?](#what-are-sql-constraints)
-4. [Difference Between Data Types & Constraints](#difference-between-data-types--constraints)
-5. [All SQL Data Types (MySQL vs PostgreSQL)](#all-sql-data-types)
-6. [All SQL Constraints Explained](#all-sql-constraints-explained)
-7. [Before/After Examples for Each Constraint](#beforeafter-examples)
-8. [Real-World Use Cases](#real-world-use-cases)
-9. [Diagrams, Tables & Flowcharts](#diagrams)
-10. [Summary Comparison Tables](#summary-tables)
-
----
-
 # 🏁 **Introduction**
 
 SQL databases store structured information using:
