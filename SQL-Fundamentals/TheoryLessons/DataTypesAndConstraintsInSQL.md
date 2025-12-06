@@ -1,3 +1,4 @@
+
 ---
 
 # 📘 **SQL Data Types & Constraints — Complete Guide (MySQL vs PostgreSQL)**
