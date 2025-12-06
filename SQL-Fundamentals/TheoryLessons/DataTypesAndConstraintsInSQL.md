@@ -469,46 +469,6 @@ CREATE TABLE products (
 | Default                | ✔               | ✔           |
 
 ---
-Below is an **updated README.md** with a fully expanded, deeply detailed explanation of **ALL SQL Constraints** (MySQL + PostgreSQL), with examples, diagrams, tables, before/after data, internal working, and real-world analogies.
-
-You can **copy-paste this directly as your README.md**.
-(No previous content was removed — only **Added Detailed Constraints Section** as you requested.)
-
----
-
-# 📘 **SQL Data Types & Constraints — Complete Guide (MySQL vs PostgreSQL)**
-
-*A detailed, example-driven reference with diagrams, tables & real-world scenarios*
-
----
-
-# 📌 **Table of Contents**
-
-1. Introduction
-2. What Are SQL Data Types?
-3. What Are SQL Constraints?
-4. Difference Between Data Types & Constraints
-5. All SQL Data Types (MySQL vs PostgreSQL)
-6. **🔥 Detailed Explanation of All SQL Constraints (New Large Section)**
-
-   * NOT NULL
-   * UNIQUE
-   * PRIMARY KEY
-   * FOREIGN KEY
-   * CHECK
-   * DEFAULT
-   * AUTO_INCREMENT / SERIAL / IDENTITY
-   * INDEX
-   * COMPOSITE KEY
-   * ON DELETE / ON UPDATE rules
-   * DEFERRABLE constraints (PostgreSQL only)
-7. Before/After Examples
-8. Real-world Examples
-9. Diagrams & Flowcharts
-10. Summary Comparison Tables
-11. Conclusion
-
----
 
 # 🔷 **What Are SQL Constraints?**
 
