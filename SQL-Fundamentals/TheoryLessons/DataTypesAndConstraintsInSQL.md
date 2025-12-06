@@ -1,14 +1,3 @@
-Below is a **fully formatted, production-ready README.md** that you can paste directly into your repo.
-It includes:
-
-✔ All SQL **datatypes** (MySQL + PostgreSQL)
-✔ All SQL **constraints** (with diagrams, tables & flowcharts)
-✔ **Before/After examples** showing how data changes
-✔ **Real-world scenarios**
-✔ Full **differences between MySQL & PostgreSQL**
-✔ Tables, ASCII diagrams & code examples
-✔ Clear, structured, developer-friendly style
-
 ---
 
 # 📘 **SQL Data Types & Constraints — Complete Guide (MySQL vs PostgreSQL)**
