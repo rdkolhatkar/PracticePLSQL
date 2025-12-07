@@ -1,2 +1,1 @@
--- Data Types and Constraints in SQL
--- This script demonstrates the use of various data types and constraints in SQL.
+
