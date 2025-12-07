@@ -1,6 +1,4 @@
 
----
-
 # ✅ **What is SQL?**
 
 **SQL (Structured Query Language)** is a standard language used to store, manipulate, and retrieve data from relational databases such as MySQL, PostgreSQL, Oracle, SQL Server, etc.
