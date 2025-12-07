@@ -1,6 +1,4 @@
 
----
-
 # 📘 **SQL Data Types & Constraints — Complete Guide (MySQL vs PostgreSQL)**
 
 *A detailed, example-driven reference with diagrams, tables & real-world scenarios*
@@ -894,21 +892,21 @@ INSERT REQUEST
 Check Data Types
        │✔
        ├───────────────────────────────┐
-       ▼                               │
-Check NOT NULL                          │
-       │✔                               │
+       ▼                               
+Check NOT NULL                         
+       │✔                              
        ├───────────────────────────────┐
-       ▼                               │
-Check UNIQUE                            │
-       │✔                               │
+       ▼                               
+Check UNIQUE                           
+       │✔                              
        ├───────────────────────────────┐
-       ▼                               │
-Check CHECK Constraint                  │
-       │✔                               │
+       ▼                               
+Check CHECK Constraint                 
+       │✔                            
        ├───────────────────────────────┐
-       ▼                               │
-Check FOREIGN KEY                       │
-       │✔                               │
+       ▼                               
+Check FOREIGN KEY                      
+       │✔                             
        ▼
  ACCEPT INSERT
 ```
