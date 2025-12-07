@@ -1,6 +1,4 @@
 
----
-
 # 📘 **README — Complete SQL Guide (MySQL vs PostgreSQL)**
 
 ### *Tables, Keywords, Datatypes, Operations & Effects*
