@@ -316,20 +316,164 @@ SET details = JSON_SET(details, '$.address', 'Mumbai');
 
 ---
 
-# 🔹 12. Charts Explaining Update Types
+# 🔹 12. Sorting Table Data Using ORDER BY (MySQL & PostgreSQL)
 
-### Update Coverage Chart
+Sorting data is a **read-only operation** that helps organize query results in a meaningful order.
+It does **not modify table data**, only how results are displayed.
 
-```
-Data Update        ██████████████ 100%
-Column Update      ████████ 70%
-Constraint Update  █████████ 85%
-Datatype Update    ███████ 60%
-Table Update       ███████████ 90%
-```
+The `ORDER BY` clause is used for sorting.
 
 ---
 
-# 🏁 Conclusion
+## 🔹 12.1 Syntax for Sorting Data
 
-This README provides complete knowledge of **all update operations** in MySQL and PostgreSQL with examples, outputs, charts and diagrams. You can paste it directly into your project documentation.
+```sql
+SELECT column1, column2
+FROM table_name
+ORDER BY column_name ASC | DESC;
+```
+
+* `ASC` → Ascending order (default)
+* `DESC` → Descending order
+
+---
+
+## 🧪 Example Table (employees)
+
+### 📊 **Before Sorting (Original Order)**
+
+| emp_id | emp_name | salary | department |
+| -----: | -------- | -----: | ---------- |
+|      1 | Alice    |  50000 | IT         |
+|      2 | Bob      |  45000 | Finance    |
+|      3 | Charlie  |  55000 | IT         |
+
+---
+
+## 🔹 12.2 Sort Employees by Salary (Ascending Order)
+
+### MySQL & PostgreSQL
+
+```sql
+SELECT emp_id, emp_name, salary, department
+FROM employees
+ORDER BY salary ASC;
+```
+
+### 📊 **After Sorting (Ascending Salary)**
+
+| emp_id | emp_name | salary | department |
+| -----: | -------- | -----: | ---------- |
+|      2 | Bob      |  45000 | Finance    |
+|      1 | Alice    |  50000 | IT         |
+|      3 | Charlie  |  55000 | IT         |
+
+### 📝 Explanation
+
+* Employees are sorted from **lowest salary to highest**
+* `ASC` is optional (default behavior)
+
+---
+
+## 🔹 12.3 Sort Employees by Salary (Descending Order)
+
+### MySQL & PostgreSQL
+
+```sql
+SELECT emp_id, emp_name, salary, department
+FROM employees
+ORDER BY salary DESC;
+```
+
+### 📊 **After Sorting (Descending Salary)**
+
+| emp_id | emp_name | salary | department |
+| -----: | -------- | -----: | ---------- |
+|      3 | Charlie  |  55000 | IT         |
+|      1 | Alice    |  50000 | IT         |
+|      2 | Bob      |  45000 | Finance    |
+
+### 📝 Explanation
+
+* Employees are sorted from **highest salary to lowest**
+* Commonly used for **top earners, rankings**
+
+---
+
+## 🔹 12.4 Sort by Multiple Columns
+
+### Example: Sort by department first, then salary
+
+### MySQL & PostgreSQL
+
+```sql
+SELECT emp_id, emp_name, salary, department
+FROM employees
+ORDER BY department ASC, salary DESC;
+```
+
+### 📊 **After Sorting**
+
+| emp_id | emp_name | salary | department |
+| -----: | -------- | -----: | ---------- |
+|      2 | Bob      |  45000 | Finance    |
+|      3 | Charlie  |  55000 | IT         |
+|      1 | Alice    |  50000 | IT         |
+
+### 📝 Explanation
+
+* First sorted by **department (A–Z)**
+* Then sorted by **salary (high to low)** within each department
+
+---
+
+## 🔹 12.5 Sorting with WHERE Condition
+
+### Example: Sort only IT employees by salary
+
+```sql
+SELECT emp_name, salary
+FROM employees
+WHERE department = 'IT'
+ORDER BY salary DESC;
+```
+
+### 📊 **Result**
+
+| emp_name | salary |
+| -------- | ------ |
+| Charlie  | 55000  |
+| Alice    | 50000  |
+
+---
+
+## 🔹 12.6 MySQL vs PostgreSQL — ORDER BY Comparison
+
+| Feature          | MySQL               | PostgreSQL           |
+| ---------------- | ------------------- | -------------------- |
+| ORDER BY syntax  | Same                | Same                 |
+| ASC / DESC       | Supported           | Supported            |
+| Multiple columns | Supported           | Supported            |
+| NULL sorting     | NULL last (default) | NULL first (default) |
+
+---
+
+## 🔹 12.7 Key Notes (Interview Important)
+
+* `ORDER BY` is executed **after WHERE**
+* Sorting affects **result set only**
+* Indexes can improve sorting performance
+* Use `LIMIT` with `ORDER BY` for top-N results
+
+```sql
+SELECT * FROM employees
+ORDER BY salary DESC
+LIMIT 1;
+```
+---
+
+## 🏁 Final Note
+
+This section completes your README by covering **data sorting operations**, making the guide **100% practical and interview-ready** for both **MySQL and PostgreSQL**.
+
+---
