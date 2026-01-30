@@ -294,16 +294,155 @@ FROM employees;
 
 ---
 
+# ➕ NEWLY ADDED OPERATORS (WITHOUT CHANGING ABOVE CONTENT)
+
+---
+
+## ❗ 13. ISNULL / COALESCE Operator
+
+### Purpose
+
+Used to replace `NULL` values with a default value.
+
+### Syntax Difference
+
+| Database   | Function Used |
+| ---------- | ------------- |
+| MySQL      | `IFNULL()`    |
+| PostgreSQL | `COALESCE()`  |
+
+### Before
+
+| emp_id | name | salary |
+| -----: | ---- | -----: |
+|      6 | Alex |   NULL |
+
+### MySQL
+
+```sql
+SELECT name, IFNULL(salary, 0) AS salary
+FROM employees;
+```
+
+### PostgreSQL
+
+```sql
+SELECT name, COALESCE(salary, 0) AS salary
+FROM employees;
+```
+
+### Result
+
+| name | salary |
+| ---- | -----: |
+| Alex |      0 |
+
+---
+
+## 🔃 14. ORDER BY Operator
+
+### Purpose
+
+Sorts result set in **ascending (ASC)** or **descending (DESC)** order.
+
+### Syntax (Same for MySQL & PostgreSQL)
+
+```sql
+SELECT name, salary
+FROM employees
+ORDER BY salary DESC;
+```
+
+### Result
+
+| name  | salary |
+| ----- | -----: |
+| John  |  90000 |
+| Anu   |  70000 |
+| Sam   |  60000 |
+| Ravi  |  50000 |
+| Meera |  45000 |
+
+📌 Default order is **ASC**
+
+---
+
+## 🔢 15. LIMIT Operator
+
+### Purpose
+
+Restricts number of rows returned.
+
+### Syntax Difference
+
+| Database   | Syntax  |
+| ---------- | ------- |
+| MySQL      | `LIMIT` |
+| PostgreSQL | `LIMIT` |
+
+### Example: Top 2 Highest Paid Employees
+
+```sql
+SELECT name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 2;
+```
+
+### Result
+
+| name | salary |
+| ---- | -----: |
+| John |  90000 |
+| Anu  |  70000 |
+
+📌 PostgreSQL also supports `OFFSET`
+
+```sql
+SELECT * FROM employees LIMIT 2 OFFSET 1;
+```
+
+---
+
+## 🎯 16. DISTINCT Operator
+
+### Purpose
+
+Removes **duplicate values** from result set.
+
+### Before
+
+| dept  |
+| ----- |
+| IT    |
+| HR    |
+| IT    |
+| SALES |
+| HR    |
+
+### Query
+
+```sql
+SELECT DISTINCT dept
+FROM employees;
+```
+
+### Result
+
+| dept  |
+| ----- |
+| IT    |
+| HR    |
+| SALES |
+
+✔️ Same in MySQL & PostgreSQL
+
+---
+
 ## 🔄 SQL Execution Flow (Conceptual)
 
-![Image](https://media2.dev.to/dynamic/image/width%3D800%2Cheight%3D%2Cfit%3Dscale-down%2Cgravity%3Dauto%2Cformat%3Dauto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffpaoxdz4bi2mys9q9bhd.png?utm_source=chatgpt.com)
-
-![Image](https://media.licdn.com/dms/image/v2/D5612AQEzpVozmjMyvQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1704017841539?e=2147483647\&t=lRZSNwmC43CvPa96SY6zrP1oalKEJJW10USPwWwtnq0\&v=beta\&utm_source=chatgpt.com)
-
-**Logical Order:**
-
 ```
-FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
+FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT
 ```
 
 ---
@@ -317,21 +456,24 @@ FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY
 | INTERSECT        | ❌                | ✅               |
 | EXCEPT           | ❌                | ✅               |
 | Division         | Integer possible | Decimal default |
+| NULL Handling    | IFNULL()         | COALESCE()      |
 
 ---
 
 ## 🧾 SQL Operators – Cheat Sheet
 
-| Category    | Operators                |          |
-| ----------- | ------------------------ | -------- |
-| Arithmetic  | `+ - * / %`              |          |
-| Comparison  | `= != <> > < >= <=`      |          |
-| Logical     | `AND OR NOT`             |          |
-| Set         | `UNION INTERSECT EXCEPT` |          |
-| Pattern     | `LIKE ILIKE`             |          |
-| Null        | `IS NULL`                |          |
-| Bitwise     | `&                       | ^ << >>` |
-| Conditional | `CASE WHEN`              |          |
+| Category    | Operators / Keywords         |
+| ----------- | ---------------------------- |
+| Arithmetic  | `+ - * / %`                  |
+| Comparison  | `= != <> > < >= <=`          |
+| Logical     | `AND OR NOT`                 |
+| Pattern     | `LIKE ILIKE`                 |
+| Null        | `IS NULL IS NOT NULL IFNULL` |
+| Sorting     | `ORDER BY`                   |
+| Limiting    | `LIMIT OFFSET`               |
+| Set         | `UNION INTERSECT EXCEPT`     |
+| Conditional | `CASE WHEN`                  |
+| Distinct    | `DISTINCT`                   |
 
 ---
 
