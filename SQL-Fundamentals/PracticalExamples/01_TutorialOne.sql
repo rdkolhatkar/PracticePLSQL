@@ -28,6 +28,14 @@
 -- MySQL Example For Creating Database and Schema:
 CREATE DATABASE company;
 
+-- In MySQL, the command SHOW DATABASES; will list all the databases (schemas) available in the MySQL server. Since CREATE SCHEMA is a synonym for CREATE DATABASE in MySQL, both commands will create a database that can be listed with SHOW DATABASES;.
+SHOW DATABASES; 
+
+-- On Windows and MacOS, Database name is case-insensitive, so "company", "Company", and "COMPANY" would all refer to the same database. However, on Linux, MySQL treats database names as case-sensitive by default, so "company", "Company", and "COMPANY" would be considered different databases. This behavior can be changed by setting the lower_case_table_names system variable in MySQL configuration.
+
+SELECT DATABASE(); -- This command will show the current database you are connected to.
+-- Database() is a MySQL function that returns the name of the current database you are connected to. If you have not selected a database, it will return NULL.
+
 CREATE SCHEMA company;
 
 -- PosgreSQL Example:
